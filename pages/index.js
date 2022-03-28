@@ -1,10 +1,13 @@
 import ItemList from '../components/ItemList'
+import Profile from '../components/Profile'
 
 const Home = () => {
 	return (
+		// contenedor principal
 		<div className='container mx-auto min-h-screen'>
+			{/* Contiene los titulos y la columna de tarjetas de projectos */}
 			<div className='mt-20 grid grid-cols-1'>
-				<div className='mx-auto w-4/5'>
+				<div className='mx-auto w-11/12'>
 					<h1 className='font-poppins text-5xl font-bold text-slate-900'>
 						Edgardo Rodríguez
 					</h1>
@@ -18,10 +21,18 @@ const Home = () => {
 						frontend dev and I usually use Node Js and MongoDB for
 						backend Development.
 					</p>
-					
 				</div>
 
-				<div className='mx-auto mt-7 w-11/12'>
+				<div className='mt-10'>
+					<Profile />
+				</div>
+
+				{/* Contenedor de la lista de tarjetas */}
+				<div className='mx-auto mt-10 w-11/12'>
+					<h2 className='mb-5 text-lg font-semibold text-slate-800'>
+						Projects
+					</h2>
+
 					<div className='grid auto-rows-auto grid-cols-1 gap-y-3'>
 						<ItemList
 							lenguageProgramming={'Javascript'}
@@ -58,10 +69,6 @@ const Home = () => {
 							githubLink={'https://github.com/'}
 						/>
 					</div>
-				</div>
-
-				<div className='mx-auto mt-7 w-11/12'>
-					<div className='grid auto-rows-auto grid-cols-1 gap-y-3'></div>
 				</div>
 			</div>
 		</div>
