@@ -33,7 +33,7 @@ const Home = () => {
 						Projects
 					</h2>
 
-					<div className='grid auto-rows-auto grid-cols-1 gap-y-3'>
+					<div className='grid auto-rows-auto mb-3 grid-cols-1 gap-y-3'>
 						<ItemList
 							lenguageProgramming={'Javascript'}
 							title={'Quote Maker'}
