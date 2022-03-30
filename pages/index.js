@@ -1,7 +1,22 @@
 import ItemList from '../components/ItemList'
 import Profile from '../components/Profile'
-
+import { projects } from '../utils/projects'
 const Home = () => {
+
+	const handleProjectsApi = () => {
+		return projects.map((project) => {
+			return (
+				<ItemList
+					key={project.id}
+					lenguageProgramming={project.programming}
+					title={project.title}
+					description={project.description}
+					githubLink={project.githubUrl}
+				/>
+			)
+		})
+	}
+
 	return (
 		// contenedor principal
 		<div className='container mx-auto min-h-screen'>
@@ -39,40 +54,7 @@ const Home = () => {
 					</h2>
 
 					<div className='mb-3 grid auto-rows-auto grid-cols-1 gap-y-3'>
-						<ItemList
-							lenguageProgramming={'Javascript'}
-							title={'Quote Maker'}
-							description={
-								'This is project was built in Nextjs and TailwindCSS'
-							}
-							githubLink={'https://github.com/'}
-						/>
-						<ItemList
-							lenguageProgramming={'TypeScript'}
-							title={'E-commerce'}
-							description={
-								'This is project was built in Nextjs and TailwindCSS'
-							}
-							githubLink={'https://github.com/'}
-						/>
-
-						<ItemList
-							lenguageProgramming={'TypeScript'}
-							title={'Delivery Website'}
-							description={
-								'This is project was built in Nextjs and TailwindCSS'
-							}
-							githubLink={'https://github.com/'}
-						/>
-
-						<ItemList
-							lenguageProgramming={'TypeScript, MongoDB'}
-							title={'Recipes Rest Api'}
-							description={
-								'This is and rest api that provides http request for web apps'
-							}
-							githubLink={'https://github.com/'}
-						/>
+						{handleProjectsApi()}
 					</div>
 				</div>
 			</div>
