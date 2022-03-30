@@ -5,9 +5,9 @@ import { FaLinkedin } from 'react-icons/fa'
 
 export const Profile = () => {
 	return (
-		<div className='flex w-full flex-row items-center justify-evenly'>
+		<div className='flex w-full flex-row items-center justify-evenly lg:justify-start'>
 
-			<div className='mr-5 rounded-full'>
+			<div className='mr-5 rounded-full lg:mr-20'>
 				<Image
 					src={
 						'https://i.pinimg.com/564x/2e/3c/42/2e3c42efc0c284cb38b11c975ba61e0c.jpg'
