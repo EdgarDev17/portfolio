@@ -1,8 +1,9 @@
 import ItemList from '../components/ItemList'
 import Profile from '../components/Profile'
 import { projects } from '../utils/projects'
-const Home = () => {
+import Button from '../components/Button'
 
+const Home: React.FC = () => {
 	const handleProjectsApi = () => {
 		return projects.map((project) => {
 			return (
@@ -40,6 +41,10 @@ const Home = () => {
 							TailwindCSS for frontend dev and I usually use Node
 							Js and MongoDB for backend Development.
 						</p>
+
+						<div className='mt-12 flex justify-center lg:justify-start'>
+							<Button label={'Contact Me'} />
+						</div>
 					</div>
 
 					<div className='mt-10 lg:mb-28'>
