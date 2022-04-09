@@ -3,10 +3,9 @@ import Image from 'next/image'
 import { GoGitBranch } from 'react-icons/go'
 import { FaLinkedin } from 'react-icons/fa'
 
-export const Profile = () => {
+export const Profile: React.FC = () => {
 	return (
 		<div className='flex w-full flex-row items-center justify-evenly lg:justify-start'>
-
 			<div className='mr-5 rounded-full lg:mr-20'>
 				<Image
 					src={

@@ -1,8 +1,10 @@
 import ItemList from '../components/ItemList'
 import Profile from '../components/Profile'
 import { projects } from '../utils/projects'
-const Home = () => {
-
+import Button from '../components/Button'
+import Title from '../components/Title'
+import P from '../components/P'
+const Home: React.FC = () => {
 	const handleProjectsApi = () => {
 		return projects.map((project) => {
 			return (
@@ -25,21 +27,23 @@ const Home = () => {
 				{/* contenedor de la informacion de mi perfil */}
 				<div className='mx-auto w-11/12 lg:flex lg:flex-col lg:justify-between'>
 					<div>
-						<h1 className='font-poppins text-4xl font-bold text-slate-900 lg:text-5xl'>
-							Edgardo Rodríguez
-						</h1>
+						<Title>Edgardo Rodríguez</Title>
 
 						<h2 className='mt-5 font-poppins text-xl font-semibold text-slate-800'>
 							Software Engineer
 						</h2>
 
-						<p className='mt-7 text-justify font-poppins leading-7 text-slate-900 lg:mt-10'>
+						<P>
 							Hey there! 👋🏼 Im a software developer focusing on
 							web development, some technologies I enjoy work with
 							include ReactJS using the framework NextJS and
 							TailwindCSS for frontend dev and I usually use Node
 							Js and MongoDB for backend Development.
-						</p>
+						</P>
+
+						<div className='mt-12 flex justify-center lg:justify-start'>
+							<Button label={'Contact Me'} />
+						</div>
 					</div>
 
 					<div className='mt-10 lg:mb-28'>
@@ -57,6 +61,12 @@ const Home = () => {
 						{handleProjectsApi()}
 					</div>
 				</div>
+			</div>
+
+			<div>
+				<h2 className='font-poppins text-3xl font-bold text-slate-900 lg:text-3xl'>
+					Tecnologies I work with
+				</h2>
 			</div>
 		</div>
 	)

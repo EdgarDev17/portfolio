@@ -1,4 +1,13 @@
-export const projects = [
+
+interface  Iproject{
+	id: number,
+	title: String,
+	description: String,
+	programming: String,
+	githubUrl: string
+}
+
+export const projects : Iproject[] = [
 	{
 		id: 1,
 		title: 'Book Social App',
