@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { GoGitBranch } from 'react-icons/go'
 import { FaLinkedin } from 'react-icons/fa'
 
-export const Profile: React.FC = () => {
+export default function Profile (){
 	return (
 		<div className='flex w-full flex-row items-center justify-evenly lg:justify-start'>
 			<div className='mr-5 rounded-full lg:mr-20'>
@@ -34,5 +34,3 @@ export const Profile: React.FC = () => {
 		</div>
 	)
 }
-
-export default Profile
