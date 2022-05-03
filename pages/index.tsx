@@ -1,10 +1,12 @@
 import ItemList from '../components/ItemList'
-import Profile from '../components/Profile'
 import { projects } from '../utils/projects'
 import Button from '../components/Button'
 import Title from '../components/Title'
 import P from '../components/P'
 import List from '../components/List'
+import Footer from '../components/Footer'
+import NavBar from '../components/NavBar'
+import ContactCard from '../components/ContactCard'
 
 export default function Home() {
 	const handleProjectsApi = () => {
@@ -23,12 +25,13 @@ export default function Home() {
 
 	return (
 		// contenedor principal
-		<div className='container mx-auto h-screen min-h-screen overflow-hidden'>
+		<div className='container mx-auto h-screen min-h-screen '>
+			<NavBar />
 			{/* Columna izquieda con mi informacion y proyectos*/}
-			<div className='grid grid-cols-1 lg:mt-20 lg:grid-cols-2 max-h-screen overflow-y-auto'>
-				{/* contenedor de la informacion de mi perfil */}
+			<div className='grid max-h-screen grid-cols-1 lg:mt-20 lg:grid-cols-2'>
+				{/* esta es la columna izquierda, donde se muestra mi perfil, mis datos y mis skills */}
 				<div className='mx-auto mt-16 w-11/12  lg:flex lg:flex-col lg:justify-between'>
-					<div>
+					<div className='overflow-y-auto'>
 						<Title>Edgardo Rodríguez</Title>
 
 						<h2 className='mt-7 text-xl font-semibold text-slate-800'>
@@ -40,7 +43,7 @@ export default function Home() {
 								on building better digital experiences. Now Im
 								focusing on building accesible, responsive,
 								scalable and awesome web apps. I like challenge
-								myself by gettinh into new projects and learn
+								myself by getting into new projects and learn
 								how to improve my skills and learning best
 								practices.
 							</P>
@@ -54,9 +57,6 @@ export default function Home() {
 						</div>
 					</div>
 
-					<div className='mt-16 mb-36 lg:mb-28'>
-						<Profile />
-					</div>
 					{/* Mi informacion */}
 					<div className='mx-auto mt-10 w-11/12'>
 						<h2 className='my-5 font-poppins text-2xl font-semibold text-slate-800 lg:text-2xl'>
@@ -74,7 +74,8 @@ export default function Home() {
 							my team have to make a web music player app at
 							college. Currently Im focusing on web development, I
 							have learned important things like user experience,
-							UI design, Accesibility and programming skills.
+							UI design, Acimport NavBar from accesibility and
+							programming skills
 						</P>
 
 						<P mt={'5'}>
@@ -85,17 +86,24 @@ export default function Home() {
 						<div className='mx-auto mt-5 mb-3'>
 							<List />
 						</div>
+						<ContactCard />
+						<Footer />
 					</div>
 				</div>
 
-				{/* Contenedor de la lista de tarjetas de projectos */}
-				<div className='mx-auto mt-20 w-11/12 lg:mt-0'>
-					<h2 className='my-10 text-2xl font-semibold text-slate-800 lg:hidden'>
-						My work
-					</h2>
+				<div>
+					{/* Columna derecha se muestran los projectos */}
 
-					<div className='mb-3 grid auto-rows-auto grid-cols-1 gap-y-3'>
-						{handleProjectsApi()}
+					<div className='lg:fixed'>
+						<div className='mx-auto mt-20 w-11/12 lg:mt-0'>
+							<h2 className='my-10 text-2xl font-semibold text-slate-800 lg:hidden'>
+								My work
+							</h2>
+
+							<div className='mb-3 grid auto-rows-auto grid-cols-1 gap-y-3'>
+								{handleProjectsApi()}
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
