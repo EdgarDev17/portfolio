@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <div>
-      Built by Edgardo Rodríguez
+      made with ☕ by Edgardo Rodriguez
     </div>
   )
 }
