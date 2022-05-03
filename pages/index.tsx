@@ -1,6 +1,5 @@
 import ItemList from '../components/ItemList'
 import { projects } from '../utils/projects'
-import Button from '../components/Button'
 import Title from '../components/Title'
 import P from '../components/P'
 import List from '../components/List'
@@ -9,6 +8,7 @@ import NavBar from '../components/NavBar'
 import ContactCard from '../components/ContactCard'
 
 export default function Home() {
+	
 	const handleProjectsApi = () => {
 		return projects.map((project) => {
 			return (
@@ -25,88 +25,75 @@ export default function Home() {
 
 	return (
 		// contenedor principal
-		<div className='container mx-auto h-screen min-h-screen '>
+		<div className='container mx-auto h-screen'>
 			<NavBar />
-			{/* Columna izquieda con mi informacion y proyectos*/}
-			<div className='grid max-h-screen grid-cols-1 lg:mt-20 lg:grid-cols-2'>
-				{/* esta es la columna izquierda, donde se muestra mi perfil, mis datos y mis skills */}
-				<div className='mx-auto mt-16 w-11/12  lg:flex lg:flex-col lg:justify-between'>
-					<div className='overflow-y-auto'>
-						<Title>Edgardo Rodríguez</Title>
 
+			{/* contenedor de las dos cols*/}
+			<div className='grid max-h-screen grid-cols-1 lg:mt-16 lg:grid-cols-2'>
+				{/* esta es la columna izquierda, donde se muestra mi perfil, mis datos y mis skills */}
+				<div className='mx-auto mt-16 w-11/12 lg:mt-0'>
+					<div>
+						<Title>Edgardo Rodríguez</Title>
 						<h2 className='mt-7 text-xl font-semibold text-slate-800'>
 							Software Engineer
 						</h2>
-						<div className='mt-10'>
-							<P>
-								Hey there! Im a software engineer specializing
-								on building better digital experiences. Now Im
-								focusing on building accesible, responsive,
-								scalable and awesome web apps. I like challenge
-								myself by getting into new projects and learn
-								how to improve my skills and learning best
-								practices.
-							</P>
-						</div>
+						<P lgmt={7} mt={10}>
+							Hey there! I am a software engineer specializing on
+							building better digital experiences. Now Im focusing
+							on building accesible, responsive, scalable and
+							awesome web apps.
+						</P>
 
-						<div className='mt-16 flex justify-center lg:justify-start'>
-							<Button
-								label={'Contact Me'}
-								variant={'secundary'}
-							/>
-						</div>
+						<P mt={10} lgmt={0}>
+							I like challenge myself by getting into new projects
+							because I enjoy to work in a team and be productive
+							and I try to improve my development skills every
+							day.
+						</P>
 					</div>
 
 					{/* Mi informacion */}
-					<div className='mx-auto mt-10 w-11/12'>
-						<h2 className='my-5 font-poppins text-2xl font-semibold text-slate-800 lg:text-2xl'>
+					<div className='mx-auto mt-10'>
+						<h2 className='lg:mt20 text-2xl font-semibold text-slate-800 lg:text-2xl'>
 							About me
 						</h2>
-						<P mt={'5'}>
-							Hello! My name is Edgardo Rodriguez and I am a
-							software engineer, I like to challenge myself to
-							improve my programming skills everyday and its like
-							a hobby learn new technologies!
+
+						<P mt={5}>
+							I really enjoy learning new thing about programming
+							every day because I like to keep up to date with new
+							techbologies and best practices Im currenly focusing
+							on web development, I have been developming web
+							projects around 3 years.
 						</P>
 
-						<P mt={'5'}>
-							My interest for web development started when me and
-							my team have to make a web music player app at
-							college. Currently Im focusing on web development, I
-							have learned important things like user experience,
-							UI design, Acimport NavBar from accesibility and
-							programming skills
-						</P>
-
-						<P mt={'5'}>
-							Here some technologies Ive been working with
+						<P mt={5}>
+							These are some technologies I have been working with
 							recently:
 						</P>
 
 						<div className='mx-auto mt-5 mb-3'>
-							<List />
+							<List/>
 						</div>
-						<ContactCard />
-						<Footer />
+						{/* <Footer /> */}
 					</div>
 				</div>
 
 				<div>
 					{/* Columna derecha se muestran los projectos */}
-
-					<div className='lg:fixed'>
+					<div className=''>
 						<div className='mx-auto mt-20 w-11/12 lg:mt-0'>
-							<h2 className='my-10 text-2xl font-semibold text-slate-800 lg:hidden'>
-								My work
+							<h2 className='my-5 text-2xl font-semibold text-slate-800 lg:hidden'>
+								Check out my work
 							</h2>
 
-							<div className='mb-3 grid auto-rows-auto grid-cols-1 gap-y-3'>
+							<div className='mb-5 grid grid-cols-1 gap-y-3'>
 								{handleProjectsApi()}
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+			{/* <ContactCard /> */}
 		</div>
 	)
 }

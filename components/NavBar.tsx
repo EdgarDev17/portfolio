@@ -1,14 +1,15 @@
 import Image from 'next/image'
 
+//lg:bg-white lg:fixed lg:mt-0
 let containerVariants = {
 	mobile: 'container mx-auto mt-5 flex items-center justify-evenly',
-	desktop: 'lg:justify-center lg:items-center',
+	desktop: 'lg:justify-between lg:items-center',
 }
 
 export default function NavBar() {
 	return (
 		<nav className={containerVariants.mobile + ' ' + containerVariants.desktop}>
-			<div>
+			<div className='lg:ml-5'>
 				<Image
 					src={'/pfp1.png'}
 					width={50}
@@ -18,7 +19,7 @@ export default function NavBar() {
 				/>
 			</div>
 
-			<div className='flex items-center justify-center'>
+			<div className='lg:mr-14'>
 				<a href='#' className='mx-5'>
 					About
 				</a>
