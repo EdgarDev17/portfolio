@@ -34,11 +34,11 @@ export default function Home() {
 				<div className='mx-auto mt-16 w-11/12 lg:mt-0'>
 					<div>
 						<Title>Edgardo Rodríguez</Title>
-						<h2 className='mt-7 text-xl font-semibold text-slate-800'>
+						<h2 className='mt-7 text-xl font-semibold text-slate-700'>
 							Software Engineer
 						</h2>
 
-						<h2 className='mt-5 text-md font-semibold text-slate-800'>
+						<h2 className='mt-5 text-md font-semibold text-slate-600'>
 							About me
 						</h2>
 
