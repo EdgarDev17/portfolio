@@ -3,9 +3,9 @@ import { projects } from '../utils/projects'
 import Title from '../components/Title'
 import P from '../components/P'
 import List from '../components/List'
-import Footer from '../components/Footer'
+// import Footer from '../components/Footer'
 import NavBar from '../components/NavBar'
-import ContactCard from '../components/ContactCard'
+// import ContactCard from '../components/ContactCard'
 
 export default function Home() {
 	
@@ -14,7 +14,7 @@ export default function Home() {
 			return (
 				<ItemList
 					key={project.id}
-					lenguageProgramming={project.programming}
+					programmingLanguage={project.programming}
 					title={project.title}
 					description={project.description}
 					githubLink={project.githubUrl}
@@ -25,7 +25,7 @@ export default function Home() {
 
 	return (
 		// contenedor principal
-		<div className='container mx-auto h-screen'>
+		<div className='container mx-auto h-screen overflow-x-hidden'>
 			<NavBar />
 
 			{/* contenedor de las dos cols*/}
@@ -37,7 +37,12 @@ export default function Home() {
 						<h2 className='mt-7 text-xl font-semibold text-slate-800'>
 							Software Engineer
 						</h2>
-						<P lgmt={7} mt={10}>
+
+						<h2 className='mt-5 text-md font-semibold text-slate-800'>
+							About me
+						</h2>
+
+						<P lgmt={3} mt={3}>
 							Hey there! I am a software engineer specializing on
 							building better digital experiences. Now Im focusing
 							on building accesible, responsive, scalable and
@@ -52,18 +57,11 @@ export default function Home() {
 						</P>
 					</div>
 
-					{/* Mi informacion */}
+					{/* My information */}
 					<div className='mx-auto mt-10'>
-						<h2 className='lg:mt20 text-2xl font-semibold text-slate-800 lg:text-2xl'>
-							About me
-						</h2>
-
 						<P mt={5}>
-							I really enjoy learning new thing about programming
-							every day because I like to keep up to date with new
-							techbologies and best practices Im currenly focusing
-							on web development, I have been developming web
-							projects around 3 years.
+							Im currently focusing on web development, I have been developing
+							web projects around 3 years.
 						</P>
 
 						<P mt={5}>
@@ -71,7 +69,7 @@ export default function Home() {
 							recently:
 						</P>
 
-						<div className='mx-auto mt-5 mb-3'>
+						<div className='mx-auto mt-8 mb-3'>
 							<List/>
 						</div>
 						{/* <Footer /> */}
@@ -79,7 +77,7 @@ export default function Home() {
 				</div>
 
 				<div>
-					{/* Columna derecha se muestran los projectos */}
+					{/* Columna derecha se muestran los proyectos */}
 					<div className=''>
 						<div className='mx-auto mt-20 w-11/12 lg:mt-0'>
 							<h2 className='my-5 text-2xl font-semibold text-slate-800 lg:hidden'>

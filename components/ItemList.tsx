@@ -1,24 +1,24 @@
 type Props = {
 	title: String
-	lenguageProgramming: String
+	programmingLanguage: String
 	description: String
 	githubLink: string
 }
 
 export default function ItemList({
-	lenguageProgramming,
+	programmingLanguage,
 	title,
 	description,
 	githubLink,
 }: Props) {
 	return (
 		<>
-			<div className='cursor-pointer'>
+			<div className='cursor-pointer hover:scale-110'>
 				<div className='rounded-md border border-slate-300 bg-white py-8 px-1 shadow-md hover:shadow-lg'>
 					<p className='my-1 mx-5 text-sm font-bold text-slate-700'>
-						{lenguageProgramming}
+						{programmingLanguage}
 					</p>
-					<h2 className='mx-5 mt-3 text-2xl font-semibold text-slate-900'>
+					<h2 className='mx-5 mt-3 text-2xl font-bold text-slate-900'>
 						{title}
 					</h2>
 					<p className='mx-5 mt-3 text-slate-600'>
