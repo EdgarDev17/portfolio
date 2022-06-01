@@ -1,9 +1,14 @@
 import React from 'react'
 
-const Title: React.FC = ({ children }) => {
+type Props = {
+	children: React.ReactNode,
+	color: string
+}
+
+const Title = ({ children, color} : Props ) => {
 	return (
 		<div>
-			<h1 className='font-poppins text-4xl font-bold text-slate-900 lg:text-5xl'>
+			<h1 className={`font-semibold text-${color}-500 xl:text-7xl`}>
 				{children}
 			</h1>
 		</div>

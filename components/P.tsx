@@ -6,9 +6,9 @@ type Props = {
 	children?: React.ReactNode
 }
 
-const P: React.FC<Props> = ({ children, mt, lgmt }) => {
+const P = ({ children, mt, lgmt }: Props) => {
 	return (
-		<p className= {`mt-${mt} text-justify font-poppins leading-7 tracking-wider text-slate-900 lg:mt-${lgmt}`}>
+		<p className= {`mt-${mt} leading-2 text-slate-800 lg:mt-${lgmt}`}>
 			{children}
 		</p>
 	)
