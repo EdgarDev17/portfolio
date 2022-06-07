@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { useRef } from 'react'
 
 //lg:bg-white lg:fixed lg:mt-0
 let containerVariants = {
@@ -6,9 +7,18 @@ let containerVariants = {
 	desktop: 'lg:justify-between lg:items-center',
 }
 
+type Props = {
+	scrollToElement: (elementRef) => void
+}
+
 export default function NavBar() {
+
 	return (
-		<nav className={containerVariants.mobile + ' ' + containerVariants.desktop}>
+		<nav
+			className={
+				containerVariants.mobile + ' ' + containerVariants.desktop
+			}
+		>
 			<div className='lg:ml-5'>
 				<Image
 					src={'/pfp1.png'}
@@ -20,7 +30,7 @@ export default function NavBar() {
 			</div>
 
 			<div className='lg:mr-14'>
-				<a href='#' className='mx-5'>
+				<a href='#about' className='mx-5'>
 					About
 				</a>
 				<a href='#' className='mx-5'>

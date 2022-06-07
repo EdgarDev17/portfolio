@@ -1,34 +1,38 @@
-import ItemList from '../components/ItemList'
-import { projects } from '../utils/projects'
 import Title from '../components/Title'
 import P from '../components/P'
 import NavBar from '../components/NavBar'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import SolidButton from '../components/buttons/SolidButton'
+import { useRef, useState } from 'react'
+import ProjectCard from "../components/ProjectCard";
 
 export default function Home() {
-	const handleProjectsApi = () => {
-		return projects.map((project) => {
-			return (
-				<ItemList
-					key={project.id}
-					programmingLanguage={project.programming}
-					title={project.title}
-					description={project.description}
-					githubLink={project.githubUrl}
-				/>
-			)
+	const main = useRef<HTMLDivElement>(null)
+	const about = useRef<HTMLDivElement>(null)
+	const projects = useRef<HTMLDivElement>(null)
+	const contact = useRef<HTMLDivElement>(null)
+
+	const getRef = () => {}
+
+	// 👇🏼 esta funcion va a recibir el parametro desde el componente NavBar(child)
+
+	const scrollToElement = (elementRef) => {
+		window.scrollTo({
+			top: elementRef.current,
+			behavior: 'smooth',
 		})
 	}
 
 	return (
 		// contenedor principal
-		<div className='container w-full mx-auto h-screen overflow-x-hidden xl:w-11/12'>
-			<NavBar />
-
+		<div id='main' ref={main} className='h-screen'>
 			{/* Primera parte se muestra mi presentacion y una imagen */}
-			<div className='flex h-4/5 w-full items-center justify-center'>
+
+			<section
+				ref={main}
+				className='flex h-5/6 w-full items-center justify-center'
+			>
 				<div>
 					<Title color='blue'>Edgardo Rodríguez</Title>
 
@@ -36,12 +40,12 @@ export default function Home() {
 						I build awesome web apps
 					</h2>
 
-					<h2 className='mt-12 text-lg font-semibold text-slate-700'>
+					{/* <h2 className='mt-12 text-lg font-semibold text-slate-700'>
 						About me
-					</h2>
+					</h2> */}
 
-					<div className='w-3/5 mb-20'>
-						<P lgmt={3} mt={3}>
+					<div className='mb-20 w-3/5'>
+						<P lgmt={3} mt={12}>
 							Hey there!{' '}
 							<span className='font-semibold text-blue-500'>
 								I am a software engineer
@@ -53,12 +57,11 @@ export default function Home() {
 						</P>
 					</div>
 
-					<SolidButton label={'About me'}/>
-
+					<SolidButton label={'About me'} />
 				</div>
 				<motion.div
 					animate={{ y: [0, 50, 0] }}
-					transition={{ repeat: Infinity , duration: 7}}
+					transition={{ repeat: Infinity, duration: 7 }}
 				>
 					<Image
 						src='/group72.svg'
@@ -67,6 +70,60 @@ export default function Home() {
 						alt='image'
 					/>
 				</motion.div>
+			</section>
+
+			<div
+				id='about'
+				ref={about}
+				className={
+					'my-5 flex flex-col items-center justify-center lg:flex-row h-5/6'
+				}
+			>
+				<div className='w-full text-justify'>
+					<h2 className={'text-3xl font-semibold text-blue-500'}>
+						About me
+					</h2>
+					<div className='lg:w-1/2'>
+						<P mt={5}>
+							Hello! if you’re here it’s because you like my work
+							and that’s awesome! if you’re looking for a web
+							engineer who likes to work in a team, collaborate,
+							listen to ideas from other people in a team and who
+							doesnt stop learning every day. you’re in the{' '}
+							<span className='text-blue-500'>right site</span>.
+						</P>
+
+						<P mt={3}>
+							I’ve been creating web software about 3 years, Ive
+							been learning best practices, unit testing,
+							debbuging, CI/CD, git and more! Some technologies I
+							enjoy work with include{' '}
+							<span className='text-blue-500'>
+								React JS, Next Js, TypeScript, TailwindCSS and
+								Mongo DB.
+							</span>
+						</P>
+					</div>
+				</div>
+
+				<Image
+					src='/Group 84.svg'
+					alt='image'
+					width={800}
+					height={800}
+				/>
+			</div>
+
+			<div className={'h-5/6'}>
+			<h2 className={'text-3xl font-semibold text-blue-500'}>
+				Projects I have built
+			</h2>
+
+			<div className={'mt-16'}>
+				<ProjectCard/>
+				<ProjectCard/>
+				<ProjectCard/>
+			</div>
 			</div>
 		</div>
 	)
