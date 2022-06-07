@@ -107,7 +107,7 @@ export default function Home() {
 				</div>
 
 				<Image
-					src='/Group 84.svg'
+					src='/landing.svg'
 					alt='image'
 					width={800}
 					height={800}
