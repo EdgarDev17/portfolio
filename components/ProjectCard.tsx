@@ -40,7 +40,7 @@ const ProjectCard = (data: Props) => {
           {tags()}
         </div>
 
-        <div className={"mt-5 flex gap-5"}>
+        <div className={" mt-5 flex gap-5"}>
           <a href={data.githubLink}>
             <Image src={"/github.svg"} alt={"github Link"} height={32} width={32} />
           </a>

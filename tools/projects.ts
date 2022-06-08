@@ -37,7 +37,7 @@ const ProjectsApi: Projects[] =
       technologies: ["Next JS", "TypeScript", "TailwindCSS", "Framer Motion", "WeatherApi"],
       github: "https://github.com/EdgarDev17/spotify-music-app",
       websiteLink: "test"
-    }
+    } 
   ];
 
 
