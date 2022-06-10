@@ -28,7 +28,7 @@ export default function Home() {
 
     return (
         // contenedor principal
-        <div className="w-full lg:mx-auto lg:h-screen lg:w-11/12">
+        <div className="mx-auto w-full lg:mx-auto lg:h-screen lg:w-11/12">
             <Head>
                 <title>EdgarDev</title>
                 <meta
@@ -36,11 +36,12 @@ export default function Home() {
                     content="initial-scale=1.0, width=device-width"
                 />
             </Head>
-            <section className="flex w-full flex-col lg:h-5/6 lg:flex-row lg:items-center lg:justify-center ">
+
+            <section className="mx-auto flex w-11/12 flex-col lg:h-5/6 lg:w-full lg:flex-row lg:items-center lg:justify-center ">
                 <div className="mt-12 lg:mt-0">
                     <Title color="blue">Edgardo Rodríguez</Title>
                     <h2 className="mt-5 text-3xl font-semibold text-slate-700 lg:text-7xl">
-                        I build awesome web apps 
+                        I build awesome web apps
                     </h2>
                     <div className={'lg:hidden'}>
                         <motion.div
@@ -69,7 +70,9 @@ export default function Home() {
                         </P>
                     </div>
 
-                    <SolidButton label={'Resume'} />
+                    <div className="flex items-center justify-center lg:block">
+                        <SolidButton label={'Resume'} />
+                    </div>
                 </div>
                 <div className="hidden lg:block">
                     <motion.div
@@ -88,14 +91,18 @@ export default function Home() {
 
             <section
                 className={
-                    'my-5 flex h-5/6 flex-col items-center justify-center lg:flex-row'
+                    'my-5 mx-auto flex w-11/12 flex-col items-center lg:h-5/6 lg:w-full lg:flex-row lg:justify-center'
                 }
             >
                 <div className="w-full text-justify">
-                    <h2 className={'text-3xl mt-12 lg:mt-0 font-semibold text-blue-500'}>
+                    <h2
+                        className={
+                            'mt-12 text-3xl font-semibold text-blue-500 lg:mt-0'
+                        }
+                    >
                         About me
                     </h2>
-                    <div className="lg:w-1/2">
+                    <div className=" lg:w-1/2">
                         <P mt={5}>
                             Hello! if you’re here it’s because you’re looking
                             for a web engineer who likes to work in a team,
@@ -134,7 +141,11 @@ export default function Home() {
                 <div className={'mt-16'}>{handleRenderProjects()}</div>
             </section>
 
-            <section className={'mt-52 h-96'}>
+            <section
+                className={
+                    'flex w-11/12 mx-auto items-center justify-center lg:mt-52 lg:h-96 lg:w-full'
+                }
+            >
                 <ContactForm />
             </section>
         </div>

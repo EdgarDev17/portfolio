@@ -27,7 +27,7 @@ const ProjectCard = (data: Props) => {
 
                 transition: { duration: 0.5 },
             }}
-            className="my-3 flex flex-col items-center justify-evenly rounded-md border hover:border-blue-500 lg:flex-row"
+            className="w-11/12 my-3 flex flex-col items-center justify-around lg:justify-evenly rounded-md border hover:border-blue-500 lg:flex-row"
         >
             <div>
                 <Image
@@ -39,20 +39,20 @@ const ProjectCard = (data: Props) => {
             </div>
 
             <div className="w-full lg:w-1/2">
-                <p className={'mt-5 text-xl font-semibold text-blue-500'}>
+                <p className={'mt-8 text-xl font-semibold text-blue-500'}>
                     {data.title}
                 </p>
                 <p className={'mt-3 text-justify'}>{data.description}</p>
 
                 <div
                     className={
-                        'mt-5 flex flex-wrap gap-1 text-blue-800 lg:gap-8'
+                        'mt-5 flex flex-wrap gap-5 text-blue-800 lg:gap-8'
                     }
                 >
                     {tags()}
                 </div>
 
-                <div className={'mt-5 flex gap-5'}>
+                <div className={'mt-12 mb-5'}>
                     <a href={data.githubLink}>
                         <Image
                             src={'/github.svg'}
