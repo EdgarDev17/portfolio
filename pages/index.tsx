@@ -27,18 +27,20 @@ export default function Home() {
     }
 
     return (
-
         // contenedor principal
         <div className="w-full lg:mx-auto lg:h-screen lg:w-11/12">
             <Head>
                 <title>EdgarDev</title>
-                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                <meta
+                    name="viewport"
+                    content="initial-scale=1.0, width=device-width"
+                />
             </Head>
             <section className="flex w-full flex-col lg:h-5/6 lg:flex-row lg:items-center lg:justify-center ">
-                <div className="">
+                <div className="mt-12 lg:mt-0">
                     <Title color="blue">Edgardo Rodríguez</Title>
                     <h2 className="mt-5 text-3xl font-semibold text-slate-700 lg:text-7xl">
-                        I build awesome web apps
+                        I build awesome web apps 
                     </h2>
                     <div className={'lg:hidden'}>
                         <motion.div
@@ -67,7 +69,7 @@ export default function Home() {
                         </P>
                     </div>
 
-                    <SolidButton label={'About me'} />
+                    <SolidButton label={'Resume'} />
                 </div>
                 <div className="hidden lg:block">
                     <motion.div
@@ -85,13 +87,12 @@ export default function Home() {
             </section>
 
             <section
-                id="about"
                 className={
                     'my-5 flex h-5/6 flex-col items-center justify-center lg:flex-row'
                 }
             >
                 <div className="w-full text-justify">
-                    <h2 className={'text-3xl font-semibold text-blue-500'}>
+                    <h2 className={'text-3xl mt-12 lg:mt-0 font-semibold text-blue-500'}>
                         About me
                     </h2>
                     <div className="lg:w-1/2">
