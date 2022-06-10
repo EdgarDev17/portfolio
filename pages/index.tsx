@@ -138,7 +138,7 @@ export default function Home() {
                     Projects I have built
                 </h2>
 
-                <div className={'mt-16'}>{handleRenderProjects()}</div>
+                <div className={'flex flex-col items-center mt-16'}>{handleRenderProjects()}</div>
             </section>
 
             <section
