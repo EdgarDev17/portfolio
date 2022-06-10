@@ -134,7 +134,7 @@ export default function Home() {
             </section>
 
             <section className={'my-32'}>
-                <h2 className={'text-3xl font-semibold text-blue-500'}>
+                <h2 className={'w-11/12 mx-auto text-3xl font-semibold text-blue-500'}>
                     Projects I have built
                 </h2>
 
