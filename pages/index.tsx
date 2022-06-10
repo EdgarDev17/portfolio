@@ -7,6 +7,7 @@ import ProjectCard from '../components/ProjectCard'
 import ProjectsApi from '../tools/projects'
 import { ReactNode } from 'react'
 import ContactForm from '../components/ContactForm'
+import Head from 'next/head'
 
 export default function Home() {
     const handleRenderProjects = (): ReactNode => {
@@ -26,23 +27,34 @@ export default function Home() {
     }
 
     return (
+
         // contenedor principal
-        <div id="main" className="mx-auto h-screen w-11/12">
-            {/* Primera parte se muestra mi presentacion y una imagen */}
-
-            <section className="flex h-5/6 w-full items-center justify-center">
-                <div>
+        <div className="w-full lg:mx-auto lg:h-screen lg:w-11/12">
+            <Head>
+                <title>EdgarDev</title>
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+            </Head>
+            <section className="flex w-full flex-col lg:h-5/6 lg:flex-row lg:items-center lg:justify-center ">
+                <div className="">
                     <Title color="blue">Edgardo Rodríguez</Title>
-
-                    <h2 className="mt-5 text-7xl font-semibold text-slate-700">
+                    <h2 className="mt-5 text-3xl font-semibold text-slate-700 lg:text-7xl">
                         I build awesome web apps
                     </h2>
+                    <div className={'lg:hidden'}>
+                        <motion.div
+                            animate={{ y: [0, 50, 0] }}
+                            transition={{ repeat: Infinity, duration: 7 }}
+                        >
+                            <Image
+                                src="/group72.svg"
+                                width={800}
+                                height={800}
+                                alt="image"
+                            />
+                        </motion.div>
+                    </div>
 
-                    {/* <h2 className='mt-12 text-lg font-semibold text-slate-700'>
-						About me
-					</h2> */}
-
-                    <div className="mb-20 w-3/5">
+                    <div className="mt-10 mb-20 lg:w-3/5">
                         <P lgmt={3} mt={12}>
                             Hey there!{' '}
                             <span className="font-semibold text-blue-500">
@@ -57,17 +69,19 @@ export default function Home() {
 
                     <SolidButton label={'About me'} />
                 </div>
-                <motion.div
-                    animate={{ y: [0, 50, 0] }}
-                    transition={{ repeat: Infinity, duration: 7 }}
-                >
-                    <Image
-                        src="/group72.svg"
-                        width={800}
-                        height={800}
-                        alt="image"
-                    />
-                </motion.div>
+                <div className="hidden lg:block">
+                    <motion.div
+                        animate={{ y: [0, 50, 0] }}
+                        transition={{ repeat: Infinity, duration: 7 }}
+                    >
+                        <Image
+                            src="/group72.svg"
+                            width={800}
+                            height={800}
+                            alt="image"
+                        />
+                    </motion.div>
+                </div>
             </section>
 
             <section
